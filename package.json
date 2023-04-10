@@ -1,0 +1,55 @@
+{
+  "name": "tproofapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && electron ./dist/main.js",
+    "app:dir": "electron-builder --dir",
+    "app:dist": "npm run build && electron-builder"
+  },
+  "keywords": [],
+  "homepage": "https://github.com/owner/project#readme",
+  "author": "III <iii@iii.org.tw>",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "asn1": "git://github.com/leon740727/asn1.git",
+    "bootstrap": "^5.1.3",
+    "crypto": "^1.0.1",
+    "ramda": "^0.28.0",
+    "sweetalert2": "^11.3.6",
+    "types": "git://github.com/leon740727/types.git#semver:~0.3.1",
+    "winston": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.5",
+    "@types/ramda": "^0.27.64",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "electron": "^16.0.7",
+    "electron-builder": "^22.14.5",
+    "eslint": "^8.7.0",
+    "typescript": "^4.5.4"
+  },
+  "build": {
+    "appId": "com.cilent.app.tproofSignatureApp",
+    "productName": "TProof-Signature-App",
+    "directories": {
+      "output": "build"
+    },
+    "mac": {},
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    }
+  },
+  "postinstall": "electron-builder install-app-deps"
+}
